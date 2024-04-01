@@ -1,0 +1,30 @@
+@startuml
+
+class Person {
+    - last_name: string
+    - first_name: string
+    - patronymic: string
+    - date_of_birth: date
+    - phone_number: string
+    - password: string
+    - identity_document: IdentityDocument
+    - employment: Employment
+    - authorization_key: string
+}
+
+class IdentityDocument {
+    - series: int
+    - number: int
+    - issue_date: date
+}
+
+class Employment {
+    - company_name: string
+    - company_phone: string
+    - address: string
+}
+
+Person "1" --> "1" IdentityDocument
+Person "1" --> "1" Employment
+
+@enduml
