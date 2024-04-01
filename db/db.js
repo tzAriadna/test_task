@@ -9,15 +9,15 @@ const db = new sqlite3.Database('./db/users.db', (err) => {
     // Создаем таблицы, если они не существуют
     db.run(`CREATE TABLE IF NOT EXISTS identity_documents (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
-      documentSeries INTEGER,
-      documentNumber INTEGER,
-      documentIssueDate DATE
+      series INTEGER,
+      number INTEGER,
+      issueDate DATE
     )`);
     db.run(`CREATE TABLE IF NOT EXISTS employments (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
-      companyName TEXT,
-      companyPhone TEXT,
-      companyAddress TEXT
+      name TEXT,
+      phone TEXT,
+      address TEXT
     )`);
     db.run(`CREATE TABLE IF NOT EXISTS users (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
